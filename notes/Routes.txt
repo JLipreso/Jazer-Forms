@@ -6,4 +6,5 @@ php artisan vendor:publish --tag=formsconfig-config
 forms/formsubmission?form_refid=STR&title=STR&forms_data=JSON&creator_name=STR&creator_email=STR&created_by=STR
 forms/seensubmission?form_submission_refid=STR&seen_by=STR
 forms/statussubmission?form_submission_refid=STR&status=STR
+forms/paginatesubmissions?page=1&where=JSON
 
