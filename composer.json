@@ -1,0 +1,26 @@
+{
+    "name": "jazer/forms",
+    "description": "Jazer package to handle forms API request",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jazer\\Forms\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel":{
+            "providers": [
+                "Jazer\\Forms\\Http\\Provider\\FormsServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Jazer Tech Solution"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {}
+}
