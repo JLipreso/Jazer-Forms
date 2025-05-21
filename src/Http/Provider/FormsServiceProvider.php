@@ -16,8 +16,8 @@ class FormsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../../../config/config.php' => config_path('formsconfig.php')
-        ], 'formsconfig-config');
+            __DIR__ . '/../../../config/config.php' => config_path('jazerformsconfig.php')
+        ], 'jazerformsconfig-config');
         
         $this->loadRoutesFrom( __DIR__ . '/../../../routes/api.php');
 
