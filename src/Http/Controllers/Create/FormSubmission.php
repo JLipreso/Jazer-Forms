@@ -35,11 +35,12 @@ class FormSubmission extends Controller
         }
         else {
             $submitted = DB::connection("conn_forms")->table("forms_submissions")->insert([
-                "project_refid"         => config('formsconfig.project_refid'),
+                "project_refid"         => config('jtformsconfig.project_refid'),
                 "form_refid"            => $request['form_refid'],
                 "form_submission_refid" => \Jazer\Forms\Http\Controllers\Utility\ReferenceID::create('FSB'),
                 "title"                 => $request['title'],
                 "forms_data"            => $request['forms_data'],
+                "creator_refid"         => $request['creator_refid'],
                 "creator_name"          => $request['creator_name'],
                 "creator_email"         => $request['creator_email'],
                 "created_by"            => $request['created_by'],

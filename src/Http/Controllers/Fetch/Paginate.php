@@ -13,7 +13,7 @@ class Paginate extends Controller
         if((isset($request['where'])) && ($request['where'] !== null )) {
             return DB::connection("conn_forms")->table("forms_submissions")
             ->where([
-                "project_refid"     => config('formsconfig.project_refid')
+                "project_refid"     => config('jtformsconfig.project_refid')
             ])
             ->where(json_decode($request['where']))
             ->orderBy("dataid", "desc")
@@ -22,7 +22,7 @@ class Paginate extends Controller
         else {
             return DB::connection("conn_forms")->table("forms_submissions")
             ->where([
-                "project_refid"     => config('formsconfig.project_refid')
+                "project_refid"     => config('jtformsconfig.project_refid')
             ])
             ->orderBy("dataid", "desc")
             ->paginate(config('formsconfig.fetch_paginate_max'));

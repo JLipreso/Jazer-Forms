@@ -11,7 +11,7 @@ class SeenSubmission extends Controller
     public static function seen(Request $request) {
         $user = DB::connection("conn_forms")->table("forms_submissions_seen")
                 ->where([
-                    "project_refid"             => config('formsconfig.project_refid'),
+                    "project_refid"             => config('jtformsconfig.project_refid'),
                     "form_submission_refid"     => $request['form_submission_refid'],
                     "seen_by"                   => $request['seen_by']
                 ])
@@ -19,7 +19,7 @@ class SeenSubmission extends Controller
         
         if (!$user) {
             $seen = DB::connection("conn_forms")->table("forms_submissions_seen")->insert([
-                "project_refid"             => config('formsconfig.project_refid'),
+                "project_refid"             => config('jtformsconfig.project_refid'),
                 "form_submission_refid"     => $request['form_submission_refid'],
                 "seen_by"                   => $request['seen_by'],
                 "seen_at"                   => date("Y-m-d h:i:s")
