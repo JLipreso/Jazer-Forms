@@ -8,21 +8,15 @@ use Illuminate\Support\Facades\DB;
 
 class Delete extends Controller
 {
-    public static function delete($people_refid) {
-        $deleted = DB::connection("conn_users")->table("people")
+    public static function delete(Request $request) {
+        $deleted = DB::connection("conn_forms")->table("forms_submissions")
             ->where([
-                "project_refid"     => config('usersconfig.project_refid'),
-                "people_refid"      => $people_refid
+                "project_refid"             => config('jtformsconfig.project_refid'),
+                "form_submission_refid"     => $request['form_submission_refid']
             ])
             ->delete();
 
         if($deleted) {
-            DB::connection("conn_users")->table("people_auth")
-            ->where([
-                "project_refid"     => env('project_refid'),
-                "people_refid"      => $people_refid
-            ])
-            ->delete();
             return [
                 "success"   => true
             ];

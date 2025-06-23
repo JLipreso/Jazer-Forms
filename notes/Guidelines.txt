@@ -13,6 +13,7 @@ Routes:
     forms/seensubmission?form_submission_refid=STR&seen_by=STR
     forms/statussubmission?form_submission_refid=STR&status=STR
     forms/paginatesubmissions?page=1&where=JSON
+    forms/paginatesearch?page=1&where=JSON
     forms/countbystatus?form_refid=FRM-06222025030548-DYH&status=new
     forms/countbystatuslist?forms=[{"form_refid":"FRM-06222025030548-DYH","form_status": "new"},{"form_refid":"FRM-06222025030548-DYH","form_status": "new"}]
-
+    forms/delete?form_submission_refid=FSB-06222025072722-MFM

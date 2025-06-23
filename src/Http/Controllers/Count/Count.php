@@ -9,13 +9,18 @@ use Illuminate\Support\Facades\DB;
 class Count extends Controller
 {
     public static function countByStatus(Request $request) {
-        return DB::connection("conn_forms")->table("forms_submissions")
+        $data = DB::connection("conn_forms")->table("forms_submissions")
         ->where([
             "project_refid"     => config('jtformsconfig.project_refid'),
             "form_refid"        => $request['form_refid'],
             "status"            => $request['status']
-        ])
-        ->count();
+        ])->count();
+        
+        return [
+            "form_refid"    => $request['form_refid'],
+            "form_status"   => $request['status'],
+            "counts"        => $data
+        ];
     }
 
     public static function countByStatusList(Request $request) {
