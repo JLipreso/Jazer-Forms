@@ -6,7 +6,7 @@ Installation:
     php artisan vendor:publish --tag=jtformsconfig-config
 
 -----------------------------------------------------------------------------------
-Routes:
+Routes: 
 ----------------------------------------------------------------------------------- 
 
     forms/formsubmission?form_refid=STR&title=STR&forms_data=JSON&creator_name=STR&creator_email=STR&created_by=STR
