@@ -21,6 +21,6 @@ class FormsServiceProvider extends ServiceProvider
         
         $this->loadRoutesFrom( __DIR__ . '/../../../routes/api.php');
 
-        config(['database.connections.conn_forms' => config('forms.database_connection')]);
+        config(['database.connections.conn_forms' => config('jtformsconfig.database_connection')]);
     }
 }
